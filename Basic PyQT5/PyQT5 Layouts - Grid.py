@@ -1,6 +1,7 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QPushButton, QLabel
 from PyQt5.QtGui import QPalette, QColor
+
 
 class MainWindow(QMainWindow):
 
@@ -8,22 +9,29 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         # Sets the window title
-        self.setWindowTitle("VBox Layout Example")
+        self.setWindowTitle("Grid Layout Example")
 
-        # Creates a vertical box layout for the app
-        layout = QVBoxLayout()
+        # Creates two buttons to be added to layout
+        button = QPushButton('Click me!!!')
+        button2 = QPushButton('Or Click me!!!')
 
-        # Adds color widgets to the vertical layout.
-        layout.addWidget(Color('red'))
-        layout.addWidget(Color('blue'))
-        layout.addWidget(Color('purple'))
-        layout.addWidget(Color('pink'))
+        # Creates label for layout
+        label = QLabel('Look at me though')
 
-        # Creates a overall widget that can hold the layout
+        # Creates grid layout
+        layout = QGridLayout()
+
+        # Adds all of the widgets to the layout given row/column positions
+        layout.addWidget(Color('purple'), 0, 0)
+        layout.addWidget(Color('red'), 1, 1)
+        layout.addWidget(Color('green'), 2, 2)
+        layout.addWidget(button, 3, 0)
+        layout.addWidget(button2, 4, 2)
+        layout.addWidget(label, 1, 0)
+
+
         widget = QWidget()
         widget.setLayout(layout)
-
-        # Sets the central widget to the widget variable
         self.setCentralWidget(widget)
 
 class Color(QWidget):

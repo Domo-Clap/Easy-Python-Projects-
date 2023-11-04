@@ -8,7 +8,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         # Sets the window title
-        self.setWindowTitle("First Layout Example")
+        self.setWindowTitle("HBox Layout Example")
 
         # Creates a vertical box layout for the app
         layout = QHBoxLayout()

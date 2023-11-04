@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QStackedLayout, QPushButton, QLabel, QTabWidget
 from PyQt5.QtGui import QPalette, QColor
 
 class MainWindow(QMainWindow):
@@ -8,23 +8,16 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         # Sets the window title
-        self.setWindowTitle("VBox Layout Example")
+        self.setWindowTitle("Stacked Layout Example 2")
 
-        # Creates a vertical box layout for the app
-        layout = QVBoxLayout()
+        tabs = QTabWidget()
+        tabs.setTabPosition(QTabWidget.North)
+        tabs.setMovable(True)
 
-        # Adds color widgets to the vertical layout.
-        layout.addWidget(Color('red'))
-        layout.addWidget(Color('blue'))
-        layout.addWidget(Color('purple'))
-        layout.addWidget(Color('pink'))
+        for n, color in enumerate(['red', 'green', 'blue', 'yellow']):
+            tabs.addTab(Color(color), color)
 
-        # Creates a overall widget that can hold the layout
-        widget = QWidget()
-        widget.setLayout(layout)
-
-        # Sets the central widget to the widget variable
-        self.setCentralWidget(widget)
+        self.setCentralWidget(tabs)
 
 class Color(QWidget):
 
