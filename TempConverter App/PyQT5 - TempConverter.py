@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QVBoxL
 
 import sys
 
-
+# Function that is used to convert the faren temp to celsius temp
 def far_to_cel(faren):
     celsius = (faren - 32) * 5 / 9
     return celsius
