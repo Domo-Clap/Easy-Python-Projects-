@@ -7,4 +7,4 @@ I love working in python, especially when I am working with data. Python is the 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+As a note, all of these projects are not to be taken as serious. They were built with the means of learning and growing as a developer. These projects are simple, but they have helped me learn a lot in terms of Python and its uses.
